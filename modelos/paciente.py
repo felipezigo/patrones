@@ -1,5 +1,5 @@
 class Paciente:
-    pacientes = []  # Lista para almacenar objetos Paciente
+    pacientes = [] 
 
     def __init__(self, nombrePaciente, tipoPaciente, tipoDocumentoPaciente, idDocumentoPaciente, telefonoPaciente, fechaNacimientoPaciente, apoderado):
         self.nombrePaciente = nombrePaciente
@@ -10,7 +10,6 @@ class Paciente:
         self.fechaNacimientoPaciente = fechaNacimientoPaciente
         self.apoderado = apoderado
 
-        # Agregar el objeto Paciente a la lista
         self.agregar_paciente(self)
 
     @classmethod
@@ -31,5 +30,4 @@ class Paciente:
         return cls.pacientes
 
     def tiene_cita_en_turno(self, turno):
-        # Lógica para verificar si el paciente tiene una cita en el mismo turno
         pass
