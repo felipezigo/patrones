@@ -1,12 +1,19 @@
-import datetime
-from modelos.rangoHorario import RangoHorario
-
-
 class Examen:
-    def _init_(self, nombre, restriccionHoraria:RangoHorario=None):
-        self.nombre = nombre
-        self.restriccionHoraria = restriccionHoraria
+    examenes = [] 
+    def __init__(self, tipo, categoria):
+        self.tipo = tipo
+        self.categoria= categoria
+        
+        # Agregar el objeto Examen a la lista
+        self.agregar_examen(self)
+        
+    @classmethod
+    def agregar_examen(cls, tipo, categoria):
+        examenAgregar = Examen
+        examenAgregar.tipo = tipo
+        examenAgregar.categoria = categoria
+        cls.examenes.append(examenAgregar)
 
-    def esta_disponible_en(self, fecha:datetime):
-        # Lógica para saber si el examen está disponible en una hora
-        pass
+    @classmethod
+    def obtener_examen(cls):
+        return cls.examenes
