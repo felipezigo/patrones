@@ -15,7 +15,6 @@ La aplicación permite agendar citas para exámenes de laboratorio. Las citas se
 
 ## Patrones de Diseño Implementados
 
-- **Singleton**: `ProgramadorLaboratorio` es una instancia única que gestiona todos los turnos.
 - **Factory**: `FabricaExamen` crea instancias de `Examen` con propiedades específicas.
 - **Strategy**: Se implementa una estrategia de reserva que puede ser extendida o modificada.
 - **Facade**: `FachadaReserva` ofrece una interfaz simplificada para la realización de reservas, ocultando la complejidad subyacente.
@@ -35,9 +34,6 @@ Descripción de cómo configurar el entorno de desarrollo local, incluyendo la i
 ```sh
 # Clonar el repositorio
 git clone [URL_DEL_REPOSITORIO]
-
-# Navegar al directorio del proyecto
-cd reserva_citas_laboratorio
 
 # (Opcional) Crear y activar un entorno virtual
 python -m venv venv
