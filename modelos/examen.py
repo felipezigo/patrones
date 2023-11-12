@@ -3,8 +3,6 @@ class Examen:
     def __init__(self, tipo, categoria):
         self.tipo = tipo
         self.categoria= categoria
-        
-        # Agregar el objeto Examen a la lista
         self.agregar_examen(self)
         
     @classmethod

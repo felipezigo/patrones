@@ -1,5 +1,5 @@
 class Apoderado:
-    apoderado = []  # Lista para almacenar objetos Paciente
+    apoderado = []
 
     def __init__(self, nombreApoderado, tipoDocumentoApoderado, idDocumentoApoderado, fechaNacimientoApoderado, idRepresentado):
         self.nombreApoderado = nombreApoderado
@@ -7,7 +7,6 @@ class Apoderado:
         self.idDocumentoApoderado = idDocumentoApoderado
         self.fechaNacimientoApoderado = fechaNacimientoApoderado
         self.idRepresentado = idRepresentado
-        # Agregar el objeto Paciente a la lista
         self.agregar_(self)
 
     @classmethod
