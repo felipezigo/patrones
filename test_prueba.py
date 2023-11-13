@@ -7,16 +7,16 @@ from modelos.examen import Examen
 class TestMiModulo(unittest.TestCase):
 
     def test_turno_es_horario_laboral(self):
-        self.assertEqual(FachadaReserva.turno_horario_laboral(fecha='2023-11-13', hora='10:00' ),  True)
+        self.assertTrue(FachadaReserva.turno_horario_laboral(fecha='2023-11-13', hora='10:00' , self=self))
 
     def test_turno_no_es_horario_laboral(self):
-        self.assertEqual(FachadaReserva.turno_horario_laboral(fecha='2023-11-13', hora='10:00' ),  False)
+        self.assertFalse(FachadaReserva.turno_horario_laboral(fecha='2023-11-12', hora='10:00' , self=self))
 
     def test_fecha_es_feriado(self):
-        self.assertEqual(FachadaReserva.es_feriado(fecha='2023-11-03'),  True)
+        self.assertTrue(FachadaReserva.es_feriado(fecha='2023-11-03', self=self))
     
     def test_fecha_no_es_feriado(self):
-        self.assertEqual(FachadaReserva.es_feriado(fecha='2023-11-13'),  False)
+        self.assertFalse(FachadaReserva.es_feriado(fecha='2023-11-13', self=self))
         
 class TestPaciente(unittest.TestCase):
     
