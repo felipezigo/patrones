@@ -3,6 +3,7 @@ import unittest
 from utilidades.facade_reserva import FachadaReserva
 from modelos.paciente import Paciente
 from modelos.examen import Examen
+from modelos.turno import Turno
 
 class TestMiModulo(unittest.TestCase):
 
@@ -31,6 +32,14 @@ class TestExamen(unittest.TestCase):
         """Prueba el método de clase para agregar un examen."""
         Examen.agregar_examen("CREATININA", "STANDARD")
         self.assertTrue(Examen.obtener_examen())
+        
+class TestTurno(unittest.TestCase):
+
+    def test_agregar_turno(self):
+        """Prueba el método de clase para agregar un turno."""
+        Turno.agregar_turno("2023-10-24", "09:00")
+        self.assertTrue(Turno.obtener_turno())
+
 
 if __name__ == '__main__':
     unittest.main()
