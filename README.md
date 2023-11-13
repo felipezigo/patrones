@@ -79,7 +79,6 @@ Clases como Turno, Paciente, Apoderado y Examen: Estas clases almacenan datos re
 **Facade** FachadaReserva se utiliza como una fachada que simplifica la reserva de citas y oculta la complejidad de las operaciones subyacentes.
 
 ## Trazas de código
-<pre>
 ```python
 #Python tiene un modo resumido para recorrer listas en donde se puede refactorizar el código hasta quedar en una sola línea: 
 #Implementar lógica para verificar si el paciente ya tiene cita en el mismo examen
