@@ -1,11 +1,11 @@
-# test_mi_modulo.py
+# test_turnos_laboratorio.py
 import unittest
 from utilidades.facade_reserva import FachadaReserva
 from modelos.paciente import Paciente
 from modelos.examen import Examen
 from modelos.turno import Turno
 
-class TestMiModulo(unittest.TestCase):
+class TestRestricciones(unittest.TestCase):
 
     def test_turno_es_horario_laboral(self):
         self.assertTrue(FachadaReserva.turno_horario_laboral(fecha='2023-11-13', hora='10:00' , self=self))
@@ -18,6 +18,7 @@ class TestMiModulo(unittest.TestCase):
     
     def test_fecha_no_es_feriado(self):
         self.assertFalse(FachadaReserva.es_feriado(fecha='2023-11-13', self=self))
+
         
 class TestPaciente(unittest.TestCase):
     
