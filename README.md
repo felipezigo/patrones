@@ -37,4 +37,11 @@ git clone [URL_DEL_REPOSITORIO]
 
 # (Opcional) Crear y activar un entorno virtual
 python -m venv venv
+
+## Bloques de código
+<pre>
+```python
+def saludar(nombre):
+    print("Hola, " + nombre)
+```
 source venv/bin/activate  # En Windows usar: venv\Scripts\activate
