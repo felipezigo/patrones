@@ -9,7 +9,7 @@ facade = FachadaReserva()
 
 contexto = ContextoLectura(None)
 
-pathArchivoInput = 'input\lab_input.txt'
+pathArchivoInput = 'input\\lab_input.txt'
 try:
     contexto.ejecutar_lectura(pathArchivoInput)
 except Exception as e:
