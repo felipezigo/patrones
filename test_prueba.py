@@ -2,6 +2,7 @@
 import unittest
 from utilidades.facade_reserva import FachadaReserva
 from modelos.paciente import Paciente
+from modelos.examen import Examen
 
 class TestMiModulo(unittest.TestCase):
 
@@ -24,6 +25,12 @@ class TestPaciente(unittest.TestCase):
         Paciente.agregar_paciente("Ana Gomez", "Tipo2", "DNI", "87654321", "987654321", "1990-01-01", None)
         self.assertTrue(Paciente.obtener_pacientes())
 
+class TestExamen(unittest.TestCase):
+
+    def test_agregar_examen(self):
+        """Prueba el método de clase para agregar un examen."""
+        Examen.agregar_examen("CREATININA", "STANDARD")
+        self.assertTrue(Examen.obtener_examen())
 
 if __name__ == '__main__':
     unittest.main()
