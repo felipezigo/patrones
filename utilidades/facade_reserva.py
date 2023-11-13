@@ -37,11 +37,12 @@ class FachadaReserva:
         datos_ordenados_separados = [list(x) for x in zip(*datos_ordenados)]
 
         citas_agrupadas = {}
-        for fecha, cita in zip(datos_ordenados_separados[1], datos_ordenados_separados[0]):
-            if fecha in citas_agrupadas:
-                citas_agrupadas[fecha].append(cita)
-            else:
-                citas_agrupadas[fecha] = [cita]
+        if len(datos_ordenados_separados) > 1:
+            for fecha, cita in zip(datos_ordenados_separados[1], datos_ordenados_separados[0]):
+                if fecha in citas_agrupadas:
+                    citas_agrupadas[fecha].append(cita)
+                else:
+                    citas_agrupadas[fecha] = [cita]
 
         for fecha, citas_en_fecha in citas_agrupadas.items():
             print(fecha)
@@ -56,10 +57,10 @@ class FachadaReserva:
             return False
 
     def tiene_cita_repetida(self, fecha, idPaciente, examen):
-        return any(Turno.turnos[indice].fecha == fecha and Paciente.pacientes[indice].idDocumentoPaciente == idPaciente and Examen.examenes[indice].tipo == examen for indice in range(len(Paciente.pacientes)-2,0))
+        return any(Turno.turnos[indice].fecha == fecha and Paciente.pacientes[indice].idDocumentoPaciente == idPaciente and Examen.examenes[indice].tipo == examen for indice in range(len(Paciente.pacientes),0))
 
     def turno_disponible(self, fecha, hora, examen):
-        return any(Turno.turnos[indice].fecha == fecha and Turno.turnos[indice].hora == hora and Examen.examenes[indice].tipo==examen for indice in range(len(Turno.turnos)-2,0))
+        return any(Turno.turnos[indice].fecha == fecha and Turno.turnos[indice].hora == hora and Examen.examenes[indice].tipo==examen for indice in range(len(Turno.turnos),0))
 
     def turno_20_minutos_libre(self, fecha, hora, examen):
         hora_inicio = datetime.strptime(hora, "%H:%M").time()
