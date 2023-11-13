@@ -15,9 +15,15 @@ La aplicación permite agendar citas para exámenes de laboratorio. Las citas se
 
 ## Patrones de Diseño Implementados
 
-- **Factory**: `FabricaExamen` crea instancias de `Examen` con propiedades específicas.
-- **Strategy**: Se implementa una estrategia de reserva que puede ser extendida o modificada.
-- **Facade**: `FachadaReserva` ofrece una interfaz simplificada para la realización de reservas, ocultando la complejidad subyacente.
+En este proyecto, se han implementado varios patrones de diseño para mejorar la estructura y la mantenibilidad del código:
+
+- **Factory (`FactoryExamen`)**: Este patrón se utiliza para crear instancias de `Examen` con propiedades específicas basadas en el tipo de examen. Facilita la adición de nuevos tipos de exámenes al sistema sin modificar el código existente.
+
+- **Strategy (`EstrategiaReserva`)**: Implementamos diferentes estrategias de reserva que pueden ser extendidas o modificadas según las necesidades del laboratorio. Esto permite una mayor flexibilidad en cómo se manejan las reservas de citas.
+
+- **Facade (`FachadaReserva`)**: Proporcionamos una interfaz simplificada para realizar reservas. Este patrón oculta la complejidad de las operaciones subyacentes relacionadas con la asignación y gestión de turnos, ofreciendo una interacción más sencilla para los usuarios.
+
+Estos patrones ayudan a mantener nuestro código más organizado, flexible y fácil de mantener.
 
 ## Principios SOLID
 
